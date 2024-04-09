@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "ozon-crowling"
+version = "0.1.0"
+description = ""
+authors = ["Сергей Попов <sergey1404sergey@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+scrapy = "^2.11.1"
+selenium = "^4.19.0"
+scrapy-rotating-proxies = "^0.6.2"
+undetected-chromedriver = "^3.5.5"
+scrapy-selenium = "^0.0.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
