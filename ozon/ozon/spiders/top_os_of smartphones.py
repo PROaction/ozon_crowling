@@ -65,6 +65,14 @@ class ScrapingClubSpider(scrapy.Spider):
                     driver.get(url)
                     self.visited_urls.add(url)
 
+                    # скролл стринцы со смартфоном.
+                    for x in range(0, SCROLL_COUNT):
+                        ActionChains(driver) \
+                            .scroll_by_amount(0, SCROLL_PIXELS) \
+                            .perform()
+
+                        time.sleep(1)
+
                     self.logger.info(f'Поиск ОС смартфона - {url}')
                     try:
                         item['operation_system'] = WebDriverWait(driver, WAIT_TIME).until(
@@ -75,7 +83,7 @@ class ScrapingClubSpider(scrapy.Spider):
                             )
                         )[0].text
                     except:
-                        self.logger.warning(f'Не найдена ОС из-за таймаута - {url}')
+                        self.logger.warning(f'Не найдена ОС смартфона - {url}')
 
                     self.logger.info(f'Нашли элемент operation_system - {item["operation_system"]}')
                     if item['operation_system'] == 'iOS':
@@ -96,13 +104,6 @@ class ScrapingClubSpider(scrapy.Spider):
                     else:
                         self.logger.info('Поиск версии Android.')
 
-                        # скролл стринцы со смартфоном.
-                        for x in range(0, SCROLL_COUNT):
-                            ActionChains(driver) \
-                                .scroll_by_amount(0, SCROLL_PIXELS) \
-                                .perform()
-
-                            time.sleep(1)
                         try:
                             item['operation_system_version'] = WebDriverWait(driver, WAIT_TIME).until(
                                 EC.presence_of_all_elements_located(
@@ -120,8 +121,6 @@ class ScrapingClubSpider(scrapy.Spider):
                                         )
                                     )
                                 )[0].text
-                                self.logger.info(f'Нашли текст версии Android в описании - '
-                                                 f'{item["operation_system_version"]}')
                                 match = re.search(
                                     r'(?:-|:)\s*([\w\s\d\.]*)(?:,|\s|$)',
                                     item['operation_system_version']
@@ -138,7 +137,7 @@ class ScrapingClubSpider(scrapy.Spider):
                                 item['operation_system_version'] = 'без версии'
 
                     self.smartphone_collected += 1
-                    self.logger.info(f'Увеличили количество обработанных смартфонов = {self.smartphone_collected}.')
+                    self.logger.info(f'Увеличили количество обработанных смартфонов - {self.smartphone_collected}.')
 
                     yield item
                 else:
