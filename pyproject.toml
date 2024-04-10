@@ -12,6 +12,10 @@ selenium = "^4.19.0"
 scrapy-rotating-proxies = "^0.6.2"
 undetected-chromedriver = "^3.5.5"
 scrapy-selenium = "^0.0.7"
+flake8 = "^7.0.0"
+isort = "^5.13.2"
+yapf = "^0.40.2"
+pandas = "^2.2.1"
 
 
 [build-system]
