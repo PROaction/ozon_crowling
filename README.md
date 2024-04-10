@@ -28,7 +28,7 @@ Android 14 - 1
 <!--Установка-->
 ## Установка
 1. Клонировать репозиторий
-```git@github.com:PROaction/ozon_crowling.git```
+```git clone git@github.com:PROaction/ozon_crowling.git```
 2. Установить Poetry, если не установлен
 3. Активировать виртуальное окружение
 ``` poetry shell```
