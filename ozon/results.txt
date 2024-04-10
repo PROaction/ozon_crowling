@@ -1,7 +1,15 @@
-iOS 16 - 6
-iOS 15 - 5
-iOS 17 - 2
-Android MIUI 14 - 2
-Android без версии - 2
+iOS 15 - 28
+iOS 17 - 19
+Android 13.x - 13
+iOS 16 - 11
+Android 12.x - 6
+Android 13 - 4
+Android без версии - 4
+Android MIUI 14 - 3
+iOS 14 - 3
 Android MIUI 14 для POCO - 2
-iOS 14 - 1
+Android Работает на базе Xiaomi HyperOS11 - 2
+Android Глобальная версия - 2
+iOS без версии - 1
+Android 11.x - 1
+Android 14 - 1

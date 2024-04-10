@@ -12,7 +12,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from ozon.items import SmartphoneItem
 
 
-SMARTPHONE_COUNT = 20
+SMARTPHONE_COUNT = 100
 WAIT_TIME = 5
 SCROLL_COUNT = 3
 SCROLL_PIXELS = 1000
